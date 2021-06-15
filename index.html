@@ -107,10 +107,6 @@
     </section>
 
     </main>
-    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
-    <script src="./js/SwupJsPlugin.min.js"></script>  
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
 
     <script>
 
@@ -171,36 +167,17 @@
             randomCategories();
         }, 1000 )
 
-        document.addEventListener('swup:pageLoaded', (event) => {
-            // do something when content is replaced
-          });
+        document.querySelector('body').onscroll = () => {
 
-          const swup = new Swup({
-            plugins: [new SwupJsPlugin()]
-          });
-
-          const options = [
-                {
-                    from: '(.*)', // meaning any
-                    to: '(.*)', // meaning any
-                    out: (next) => {
-                        setTimeout(next, 2000);
-                      },
-                    in: (next) => next()
-                }
-                ];
-
-            document.querySelector('body').onscroll = () => {
-
-                if(scrollY < window.innerHeight){
-                    console.log(scrollY,window.pageYOffset)
-                    document.querySelector('.hero__image img').style.transform = `rotate3d(-${(scrollY/10)*4}, -${(scrollY/8)}, 1 , ${(scrollY/8)}deg)`;
-                }
+            if(scrollY < window.innerHeight){
+                console.log(scrollY,window.pageYOffset)
+                document.querySelector('.hero__image img').style.transform = `rotate3d(-${(scrollY/10)*4}, -${(scrollY/8)}, 1 , ${(scrollY/8)}deg)`;
             }
+        }
 
-            document.querySelector('body').onload = () => {
-                document.querySelector('body').classList.add('active')
-            }
+        document.querySelector('body').onload = () => {
+            document.querySelector('body').classList.add('loaded')
+        }
 
             
     </script>
