@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost UXWriter</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+    <main>
+    <header>
+        <div class="header__logo">
+            <img src="/images/logo.svg" />
+        </div>
+        <div class="header__cta">
+            <a href="/">
+                <img src="/images/figma_icon.svg" />
+                Download Plugin
+            </a>
+        </div>
+    </header>
+
+    <section class="hero" id="swup" class="transition-fade">
+        <h2>Making your UX Copies <span>accessible</span> and <span>humane</span></h2> 
+        <div class="hero__subheading">
+            <span>Choose from <span>multiple voice tones</span>, search from wide <span>categories</span> and save your <span>favourites.</span>
+        </div>    
+
+        <div class="hero__image">
+            <img src="/images/hero.png" />
+        </div>
+
+    </section>
+    <section class="plugin__tryout">
+        <div class="plugin__tryout--left">
+            <p>Let’s get to the point, Your UX Copies looks like this</p>
+            <h4>We are here to change this, <span>Run the plugin</span> to see for yourself</h4>
+            <span class="plugin__tryout--btn">
+                <img src="/images/figma_grey.svg" />
+                Run Ghost UXWriter
+            </span>
+        </div>
+        <div class="plugin__tryout--right">
+            <img src="/images/plugin_demo.png" />
+        </div>
+    </section>
+
+    <section class="plugin__features">
+        <!-- <div class="snack__divider"></div> -->
+        <div class="features__container">
+            <div class="features__container--left">
+                <h4>Choose UX Copies across multiple categories</h4>
+                <p>Some description of the feature here to convey the idea in more detail, we can talk about how this feature helps them choose copies faster.</p>
+            </div>
+            <div class="features__container--right">
+                <div class="random__categories">
+                    <div class="random__categories--row">
+                        <div id="random_1" class="random__categories--item"></div>
+                        <div id="random_2" class="random__categories--item"></div>
+                    </div>
+                    <div class="random__categories--row">
+                        <div id="random_3" class="random__categories--item"></div>
+                        <div id="random_4" class="random__categories--item"></div>
+                    </div>
+                    <div class="random__categories--row">
+                        <div id="random_5" class="random__categories--item"></div>
+                        <div id="random_6" class="random__categories--item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="features__container voice__tones">
+            <div class="features__container--left">
+                <img class="voice__tones" src="/images/select_tones.png" />
+            </div>
+            <div class="features__container--right">
+                <h4>Select the voice and tone that suits your project</h4>
+                <p>The coolest thing is that every little UX copy has three different tones. Which means you have a variety of options to choose from! It's like choosing the right that matches your brand personality!</p>
+            </div>
+        </div>
+        <div class="features__container">
+            <div class="features__container--left">
+                <h4>Pick your favorites</h4>
+                <p>Now, you can mark copies as favorites for smooth access and add your personal copies to keep using them frequently within the project.</p>
+            </div>
+            <div class="features__container--right">
+                <img style="width: 400px; height: 400px" src="/images/favorites.svg" />
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="footer">
+        <div class="radiant__divider"></div>
+        <div class="footer__container"> 
+            <h4>You are just few clicks away from making your copies shine</h4>
+            <a href="#" class="plugin__download--btn">
+                <img src="/images/figma_grey.svg" />
+                Run Ghost UXWriter
+            </a>
+            <img class="footer__plugin" src="/images/footer_plugin_img.png" />
+        </div>
+    </section>
+    </main>
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+
+    <script>
+        const swup = new Swup();
+
+        let categories = [
+            { icon: "/images/categories/payment_errors.svg", title: "Payment Errors"},
+            { icon: "/images/categories/file_errors.svg", title: "File Errors"},
+            { icon: "/images/categories/system_errors.svg", title: "System Errors"},
+            { icon: "/images/categories/user_input_errors.svg", title: "User Input Errors"},
+            { icon: "/images/categories/file_errors.svg", title: "Server Errors"},
+            { icon: "/images/categories/system_errors.svg", title: "Network States"},
+            { icon: "/images/categories/user_input_errors.svg", title: "Login Errors"},
+            { icon: "/images/categories/payment_errors.svg", title: "Payment Errors"},
+        ]
+
+        let generatedBlocks = [];
+
+        function test() {
+            let randomBlock = Math.ceils(Math.random()*6); // 6 blocks in UI layout
+        }
+
+        for(let i=0; i<4; i++) {
+            let randomCategory = Math.ceil(Math.random()*(categories.length-1))
+            let randomBlock = Math.ceil(Math.random()*6); // 6 blocks in UI layout
+
+            if(generatedBlocks.includes(randomBlock)) {
+                randomBlock = Math.ceil(Math.random()*6); // 6 blocks in UI layout
+            }
+
+            console.log(randomBlock,randomCategory)
+            document.querySelector(`#random_${randomBlock}`).innerHTML = `
+                <img src="${categories[randomCategory].icon}" />
+                <span>${categories[randomCategory].title}</span>
+            `
+
+            generatedBlocks = [...generatedBlocks, randomBlock]            
+        }
+
+    </script>
+
+</body>
+</html>
