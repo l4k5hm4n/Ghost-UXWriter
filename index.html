@@ -108,11 +108,11 @@
 
     </main>
     <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
+    <script src="./js/SwupJsPlugin.min.js"></script>  
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
 
     <script>
-        const swup = new Swup();
 
         let categories = [
             { icon: "images/categories/payment_errors.svg", title: "Payment Errors"},
@@ -125,29 +125,84 @@
             { icon: "images/categories/payment_errors.svg", title: "Payment Errors"},
         ]
 
-        let generatedBlocks = [];
+        function randomCategories() {
+            let generatedBlocks = [];
+            let generatedCategories = [];
 
-        function test() {
-            let randomBlock = Math.ceils(Math.random()*6); // 6 blocks in UI layout
+            document.querySelectorAll('.random__categories--item').forEach(item => {
+                item.classList.remove('active')
+                item.innerHTML = ''
+            })
+            
+            for(let i=0; i<4; i++) {
+                let randomCategory, randomBlock;
+    
+                function uniqueBlocks() {
+                    randomBlock = Math.ceil(Math.random()*6); // 6 blocks in UI layout
+                    if(generatedBlocks.includes(randomBlock)) {
+                        uniqueBlocks();
+                    }
+                }
+    
+                function uniqueCategories() {
+                    randomCategory = Math.ceil(Math.random()*6); // 6 blocks in UI layout
+                    if(generatedCategories.includes(randomCategory)) {
+                        uniqueCategories();
+                    }
+                }
+    
+                uniqueBlocks();
+                uniqueCategories();
+                    
+                generatedBlocks = [...generatedBlocks, randomBlock]      
+                generatedCategories = [...generatedCategories, randomCategory]  
+                
+                document.querySelector(`#random_${randomBlock}`).classList.add('active')
+                document.querySelector(`#random_${randomBlock}`).innerHTML = `
+                    <img src="${categories[randomCategory].icon}" />
+                    <span>${categories[randomCategory].title}</span>
+                `
+            }
         }
 
-        for(let i=0; i<4; i++) {
-            let randomCategory = Math.ceil(Math.random()*(categories.length-1))
-            let randomBlock = Math.ceil(Math.random()*6); // 6 blocks in UI layout
+        randomCategories();
 
-            if(generatedBlocks.includes(randomBlock)) {
-                randomBlock = Math.ceil(Math.random()*6); // 6 blocks in UI layout
+        setInterval( () => {
+            randomCategories();
+        }, 1000 )
+
+        document.addEventListener('swup:pageLoaded', (event) => {
+            // do something when content is replaced
+          });
+
+          const swup = new Swup({
+            plugins: [new SwupJsPlugin()]
+          });
+
+          const options = [
+                {
+                    from: '(.*)', // meaning any
+                    to: '(.*)', // meaning any
+                    out: (next) => {
+                        setTimeout(next, 2000);
+                      },
+                    in: (next) => next()
+                }
+                ];
+
+            document.querySelector('body').onscroll = () => {
+
+                if(scrollY < window.innerHeight){
+                    console.log(scrollY,window.pageYOffset)
+                    document.querySelector('.hero__image img').style.transform = `rotate3d(-${(scrollY/10)*4}, -${(scrollY/8)}, 1 , ${(scrollY/8)}deg)`;
+                }
             }
 
-            console.log(randomBlock,randomCategory)
-            document.querySelector(`#random_${randomBlock}`).innerHTML = `
-                <img src="${categories[randomCategory].icon}" />
-                <span>${categories[randomCategory].title}</span>
-            `
+            document.querySelector('body').onload = () => {
+                document.querySelector('body').classList.add('active')
+            }
 
-            generatedBlocks = [...generatedBlocks, randomBlock]            
-        }
-
+            
     </script>
 
 </body>
