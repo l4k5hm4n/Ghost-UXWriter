@@ -7,7 +7,7 @@
     <title>Ghost UXWriter</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
     <main>
@@ -82,7 +82,7 @@
                 <p>The coolest thing is that every little UX copy has three different tones. Which means you have a variety of options to choose from! It's like choosing the right that matches your brand personality!</p>
             </div>
         </div>
-        <div class="features__container">
+        <div class="features__container features">
             <div class="features__container--left">
                 <h4>Pick your favorites</h4>
                 <p>Now, you can mark copies as favorites for smooth access and add your personal copies to keep using them frequently within the project.</p>
@@ -170,7 +170,6 @@
         document.querySelector('body').onscroll = () => {
 
             if(scrollY < window.innerHeight){
-                console.log(scrollY,window.pageYOffset)
                 document.querySelector('.hero__image img').style.transform = `rotate3d(-${(scrollY/10)*4}, -${(scrollY/8)}, 1 , ${(scrollY/8)}deg)`;
             }
         }

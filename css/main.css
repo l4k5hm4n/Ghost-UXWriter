@@ -130,7 +130,7 @@ section.hero .hero__image img {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 120px;
-  padding: 0 10% 0 10%;
+  padding: 0 10% 0 12%;
   z-index: 999999;
   position: relative;
 }
@@ -347,8 +347,8 @@ section.hero .hero__image img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 0px -8px 24px 10px rgba(109, 107, 110, 0.12), 0px 0px 24px 10px #41173b;
-          box-shadow: 0px -8px 24px 10px rgba(109, 107, 110, 0.12), 0px 0px 24px 10px #41173b;
+  -webkit-box-shadow: 0px -8px 24px 10px rgba(109, 107, 110, 0.12), 0px 0px 24px 10px #41173be6;
+          box-shadow: 0px -8px 24px 10px rgba(109, 107, 110, 0.12), 0px 0px 24px 10px #41173be6;
 }
 
 .plugin__features .features__container .random__categories .random__categories--row .random__categories--item.active img, .plugin__features .features__container .random__categories .random__categories--row .random__categories--item.active span {
@@ -452,19 +452,51 @@ section.hero .hero__image img {
           box-shadow: 5px -2px 26px 8px #48497a99;
 }
 
-.transition-fade {
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  opacity: 1;
-}
-
-html.is-animating .transition-fade {
-  opacity: 0;
-}
-
-@media (max-width: 1440px) {
+@media (max-width: 1540px) {
   .plugin__features {
     padding-inline: 6%;
+  }
+}
+
+@media (max-width: 1040px) {
+  .plugin__tryout {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  section.hero {
+    margin-top: 80px !important;
+    margin: 0;
+  }
+  .plugin__tryout .plugin__tryout--left {
+    margin-bottom: 100px;
+  }
+  .plugin__features .features__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 100px;
+  }
+  .plugin__features .features__container .features__container--left {
+    padding-bottom: 40px;
+  }
+  .features__container.voice__tones {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    padding-bottom: 0;
+  }
+  .footer__container h4 {
+    padding: 0 16% !important;
+  }
+  .features__container {
+    text-align: center;
   }
 }
 /*# sourceMappingURL=main.css.map */
