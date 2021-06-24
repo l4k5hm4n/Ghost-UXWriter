@@ -23,7 +23,7 @@
         </div>
     </header>
 
-    <section class="hero" id="swup" class="transition-fade">
+    <section class="hero">
         <h2>Making your UX Copies <span>accessible</span> and <span>humane</span></h2> 
         <div class="hero__subheading">
             <span>Choose from <span>multiple voice tones</span>, search from wide <span>categories</span> and save your <span>favourites.</span>
@@ -50,14 +50,13 @@
     </section>
 
     <section class="plugin__features">
-        <!-- <div class="snack__divider"></div> -->
         <div class="features__container">
             <div class="features__container--left">
                 <h4>Choose UX Copies across multiple categories</h4>
                 <p>Some description of the feature here to convey the idea in more detail, we can talk about how this feature helps them choose copies faster.</p>
             </div>
             <div class="features__container--right">
-                <div class="random__categories">
+                <div class="random__categories main">
                     <div class="random__categories--row">
                         <div id="random_1" class="random__categories--item"></div>
                         <div id="random_2" class="random__categories--item"></div>
@@ -125,7 +124,7 @@
             let generatedBlocks = [];
             let generatedCategories = [];
 
-            document.querySelectorAll('.random__categories--item').forEach(item => {
+            document.querySelectorAll('.random__categories.main .random__categories--item').forEach(item => {
                 item.classList.remove('active')
                 item.innerHTML = ''
             })
@@ -153,24 +152,48 @@
                 generatedBlocks = [...generatedBlocks, randomBlock]      
                 generatedCategories = [...generatedCategories, randomCategory]  
                 
-                document.querySelector(`#random_${randomBlock}`).classList.add('active')
-                document.querySelector(`#random_${randomBlock}`).innerHTML = `
+                document.querySelector(`.random__categories.main #random_${randomBlock}`).classList.add('active')
+                document.querySelector(`.random__categories.main #random_${randomBlock}`).innerHTML = `
                     <img src="${categories[randomCategory].icon}" />
                     <span>${categories[randomCategory].title}</span>
                 `
             }
+            
         }
-
+    
         randomCategories();
 
         setInterval( () => {
-            randomCategories();
-        }, 1000 )
+            let test = document.querySelector('.random__categories.main').cloneNode(true)
+            test.id = 'test',
+            test.classList.remove('main')
+            document.querySelector('.features__container--right').insertAdjacentElement('afterBegin', test)
+            setTimeout( () => {  
+                     document.querySelector('#test').remove();  
+            }, 1200)
+            setTimeout( () => {  
+                     randomCategories(); 
+            }, 1000)
+            document.querySelector('.random__categories.main').classList.toggle('active')
+        }, 4000 )
+
+        let height;
+
+        function scrollHandler() {
+            height = document.querySelector('.hero__image img').height;
+            document.querySelector('.hero__image img').style.transform = `rotateX(0}deg)`;
+            document.querySelector('.hero__image img').style.height = height;
+        }
+
+        window.addEventListener("resize", scrollHandler);
+
+        height = document.querySelector('.hero__image img').height;
 
         document.querySelector('body').onscroll = () => {
-
-            if(scrollY < window.innerHeight){
-                document.querySelector('.hero__image img').style.transform = `rotate3d(-${(scrollY/10)*4}, -${(scrollY/8)}, 1 , ${(scrollY/8)}deg)`;
+            if(scrollY < window.innerHeight/2){
+            //   document.querySelector('.hero__image img').style.transform = `rotate3d(-${(scrollY/10)*4}, -${(scrollY/8)}, 1 , ${(scrollY/8)}deg)`;
+               document.querySelector('.hero__image img').style.transform = `rotateX(${scrollY/10}deg)`;
+               document.querySelector('.hero__image img').style.height = Math.max(height - scrollY,0) + 'px';
             }
         }
 
@@ -178,7 +201,6 @@
             document.querySelector('body').classList.add('loaded')
         }
 
-            
     </script>
 
 </body>
