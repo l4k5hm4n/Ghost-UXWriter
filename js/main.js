@@ -89,7 +89,7 @@ document.querySelector('body').onscroll = () => {
 
 document.querySelector('body').onload = () => {
     document.querySelector('.preloader').remove();
-    document.querySelector('body').classList.add('loaded')
+    document.querySelector('body').classList.add('loaded');
 }
 
 document.querySelector('.tryout__toolbar--figma, .tryout__toolbar--figma svg').onclick = () => {
