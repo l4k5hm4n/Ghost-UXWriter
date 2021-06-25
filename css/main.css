@@ -533,7 +533,7 @@ section.hero .hero__image video {
 
 .plugin__features .features__container #shadow__block {
   position: absolute;
-  top: 440px;
+  top: 0px;
   opacity: 0;
   -webkit-animation: fadeLeft3 500ms ease-in 1;
           animation: fadeLeft3 500ms ease-in 1;
@@ -902,7 +902,7 @@ section.hero .hero__image video {
     height: 200px !important;
   }
   #shadow__block {
-    margin-top: -200px;
+    margin-top: 200px !important;
   }
   .UX__copies {
     position: relative;

@@ -461,7 +461,7 @@ section.hero {
 
         #shadow__block {
             position: absolute;
-            top: 440px;
+            top: 0px;
             opacity: 0;
     
             animation: fadeLeft3 500ms ease-in 1;
@@ -771,7 +771,7 @@ section.hero {
     } 
 
     #shadow__block  {
-        margin-top: -200px
+        margin-top: 200px !important
     }
 
     .UX__copies {
