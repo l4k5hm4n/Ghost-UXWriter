@@ -935,14 +935,14 @@ section.hero .hero__image video {
     margin: -40px 0;
   }
   header {
-    padding: 24px 40px;
+    padding: 24px 30px;
   }
   .header__cta {
     position: relative;
     top: 68px;
   }
   .header__cta a {
-    margin-right: 20px;
+    margin-right: 10px;
     padding: 10px 16px;
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
