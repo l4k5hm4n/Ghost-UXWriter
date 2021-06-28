@@ -480,22 +480,15 @@ section.hero {
             top: 0px;
             opacity: 0;
     
-            animation: fadeLeft3 500ms ease-in 1;
+            animation: fadeLeft3 400ms ease-in 1;
             @keyframes fadeLeft3 {
                 0% {
                     margin-left: -50px;
                     opacity: 0.6;
                 }
 
-                25% {
-                    opacity: 0.2;
-                }
-
-                50% {
-                    opacity: 0.6;
-                }
-
-                75% {
+                0% {
+                    margin-left: -50px;
                     opacity: 0.4;
                 }
 
@@ -563,7 +556,7 @@ section.hero {
 
                     @keyframes categoryItem-fadeIn1 {
                         0% {
-                            opacity: 0;
+                            opacity: 1;
                         }
 
                         100% {

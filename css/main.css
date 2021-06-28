@@ -554,8 +554,8 @@ section.hero .hero__image video {
   position: absolute;
   top: 0px;
   opacity: 0;
-  -webkit-animation: fadeLeft3 500ms ease-in 1;
-          animation: fadeLeft3 500ms ease-in 1;
+  -webkit-animation: fadeLeft3 400ms ease-in 1;
+          animation: fadeLeft3 400ms ease-in 1;
 }
 
 @-webkit-keyframes fadeLeft3 {
@@ -563,13 +563,8 @@ section.hero .hero__image video {
     margin-left: -50px;
     opacity: 0.6;
   }
-  25% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.6;
-  }
-  75% {
+  0% {
+    margin-left: -50px;
     opacity: 0.4;
   }
   100% {
@@ -583,13 +578,8 @@ section.hero .hero__image video {
     margin-left: -50px;
     opacity: 0.6;
   }
-  25% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.6;
-  }
-  75% {
+  0% {
+    margin-left: -50px;
     opacity: 0.4;
   }
   100% {
@@ -684,7 +674,7 @@ section.hero .hero__image video {
 
 @-webkit-keyframes categoryItem-fadeIn1 {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
   100% {
     opacity: 1;
@@ -693,7 +683,7 @@ section.hero .hero__image video {
 
 @keyframes categoryItem-fadeIn1 {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
   100% {
     opacity: 1;

@@ -18,7 +18,9 @@ function randomCategories() {
         item.innerHTML = ''
     })
     
-    for(let i=0; i<4; i++) {
+    let randomLength = Math.ceil((Math.random()+0.5)*3)
+
+    for(let i=0; i<randomLength; i++) {
         let randomCategory, randomBlock;
 
         function uniqueBlocks() {
@@ -40,12 +42,18 @@ function randomCategories() {
             
         generatedBlocks = [...generatedBlocks, randomBlock]      
         generatedCategories = [...generatedCategories, randomCategory]  
-        
-        document.querySelector(`.random__categories.main #random_${randomBlock}`).classList.add('active')
-        document.querySelector(`.random__categories.main #random_${randomBlock}`).innerHTML = `
+
+
+
+        setTimeout( () => {  
+            document.querySelector(`.random__categories.main #random_${randomBlock}`).classList.remove('active')
+            document.querySelector(`.random__categories.main #random_${randomBlock}`).innerHTML = `
             <img src="${categories[randomCategory].icon}" />
             <span>${categories[randomCategory].title}</span>
         `
+        document.querySelector(`.random__categories.main #random_${randomBlock}`).classList.add('active')
+   }, 100)
+       
     }
     
 }
@@ -62,7 +70,7 @@ setInterval( () => {
     }, 1200)
     setTimeout( () => {  
              randomCategories(); 
-    }, 1000)
+    }, 400)
     document.querySelector('.random__categories.main').classList.toggle('active')
 }, 4000 )
 
