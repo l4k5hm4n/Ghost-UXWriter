@@ -80,10 +80,8 @@ height = document.querySelector('.hero__image video').height;
 
 document.querySelector('body').onscroll = () => {
     if(scrollY < window.innerHeight){
-    //   document.querySelector('.hero__image img').style.transform = `rotate3d(-${(scrollY/10)*4}, -${(scrollY/8)}, 1 , ${(scrollY/8)}deg)`;
-      document.querySelector('.hero__image video').style.transform = `rotateX(${scrollY/6}deg)`;
-      document.querySelector('.hero__image').style.height = Math.max(height - scrollY/3,0) + 'px';
-      document.querySelector('.hero__image').style.marginTop = -Math.max(scrollY/6,0) + 'px';
+      document.querySelector('.hero__image video').style.transform = `skew(${scrollY/60}deg, ${Math.max(-scrollY/40, -1)}deg)`;
+      document.querySelector('.hero__image video').style.height = Math.max(height - scrollY/4,0) + 'px';
     }
 }
 
@@ -132,3 +130,4 @@ document.querySelector('.plugin__tryout .plugin__tryout--btn').onclick = () => {
     }
 
 }
+2

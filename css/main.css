@@ -226,6 +226,7 @@ section.hero h2 {
 section.hero h2 span {
   font-size: 60px;
   text-align: center;
+  font-weight: 700;
   margin-bottom: 20px;
   background: -webkit-linear-gradient(309deg, #939DF8 -75.85%, #9C8EF7 29.62%, #C987FB 61.45%, #D04F78 98.73%);
   -webkit-background-clip: text;
@@ -283,9 +284,9 @@ section.hero .hero__image video {
 }
 
 .plugin__tryout .plugin__tryout--left h4 {
-  font-size: 34px;
+  font-size: 32px;
   max-width: 400px;
-  font-weight: 500;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
@@ -315,6 +316,10 @@ section.hero .hero__image video {
   padding-right: 8px;
 }
 
+.plugin__tryout .plugin__tryout--left .plugin__tryout--btn span {
+  font-weight: bold;
+}
+
 .plugin__tryout .plugin__tryout--right {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 60%;
@@ -325,6 +330,10 @@ section.hero .hero__image video {
 .plugin__tryout .plugin__tryout--right .tryout__container {
   max-width: 700px;
   margin: auto;
+}
+
+.plugin__tryout .plugin__tryout--right .tryout__container .tryout__toolbar--tab {
+  font-family: 'Inter', sans-serif;
 }
 
 .plugin__tryout .plugin__tryout--right .tryout__container.video_playing .tryout__toolbar--tab:after {
@@ -397,6 +406,8 @@ section.hero .hero__image video {
 .plugin__tryout .plugin__tryout--right video {
   margin: auto;
   display: block;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .plugin__features {
@@ -463,13 +474,20 @@ section.hero .hero__image video {
           align-items: center;
 }
 
+.plugin__features .features__container .features__container--left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 600px;
+}
+
 .plugin__features .features__container .features__container--left h4 {
   font-size: 40px;
   color: white;
   padding: 0 10%;
   max-width: 600px;
   margin-bottom: 0;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .plugin__features .features__container .features__container--left p {
@@ -501,6 +519,7 @@ section.hero .hero__image video {
 
 .plugin__features .features__container.voice__tones .features__container--left {
   position: relative;
+  max-width: 100%;
 }
 
 .plugin__features .features__container.voice__tones .features__container--left:before {
@@ -518,7 +537,7 @@ section.hero .hero__image video {
   height: 100%;
   width: 100px;
   top: 0;
-  right: 20px;
+  right: 0px;
   position: absolute;
   display: block;
   background: -webkit-gradient(linear, right top, left top, from(#000000), to(transparent));
@@ -544,6 +563,15 @@ section.hero .hero__image video {
     margin-left: -50px;
     opacity: 0.6;
   }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  75% {
+    opacity: 0.4;
+  }
   100% {
     margin-left: -200px;
     opacity: 0.2;
@@ -554,6 +582,15 @@ section.hero .hero__image video {
   0% {
     margin-left: -50px;
     opacity: 0.6;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  75% {
+    opacity: 0.4;
   }
   100% {
     margin-left: -200px;
@@ -718,7 +755,7 @@ section.hero .hero__image video {
 
 .plugin__features .features__container.favourites .features__container--right img {
   width: auto;
-  height: 350px;
+  height: 280px;
 }
 
 .footer {
@@ -741,7 +778,7 @@ section.hero .hero__image video {
 
 .footer .footer__container h4 {
   font-size: 40px;
-  font-weight: 500;
+  font-weight: bold;
   color: white;
   padding: 0 32%;
   text-align: center;
@@ -751,6 +788,7 @@ section.hero .hero__image video {
   color: black;
   margin-top: 40px;
   padding: 10px 16px;
+  font-weight: bold;
   background: white;
   border-radius: 8px;
   display: -webkit-box;
@@ -900,6 +938,7 @@ section.hero .hero__image video {
   }
   section.hero .hero__image video {
     height: 200px !important;
+    margin-bottom: 160px;
   }
   #shadow__block {
     margin-top: 200px !important;
@@ -916,6 +955,12 @@ section.hero .hero__image video {
   }
   .plugin__features .features__container .features__container--left {
     margin-top: -100px;
+    padding-bottom: 0;
+  }
+  .plugin__features .features__container.voice__tones img {
+    width: 100%;
+    padding: 0;
+    height: 250px;
   }
   .features__container.favourites {
     padding-top: 100px;
