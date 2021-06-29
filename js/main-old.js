@@ -87,11 +87,16 @@ window.addEventListener("resize", scrollHandler);
 height = document.querySelector('.hero__image video').height;
 
 document.querySelector('body').onscroll = () => {
-    if(scrollY < window.innerHeight){
-    //   document.querySelector('.hero__image img').style.transform = `rotate3d(-${(scrollY/10)*4}, -${(scrollY/8)}, 1 , ${(scrollY/8)}deg)`;
-    document.querySelector('.hero__image video').style.transform = `rotateX(${scrollY/6}deg)`;
-    document.querySelector('.hero__image').style.height = Math.max(height - scrollY/3,0) + 'px';
-    document.querySelector('.hero__image').style.marginTop = -Math.max(scrollY/6,0) + 'px';
+    if(scrollY < 200){
+    document.querySelector('.hero__image video').style.height = height+'px'
+    document.querySelector('.hero__image video').style.transform = `rotateX(${scrollY/4}deg)`;
+    document.querySelector('.hero__image video').style.marginTop = -Math.max(scrollY/6,0) + 'px';
+    document.querySelector('.hero__image').classList.remove('active')
+    }
+
+    else {
+        document.querySelector('.hero__image video').style.height = (height-scrollY/1.6)+'px';
+        document.querySelector('.hero__image').classList.add('active')        
     }
 }
 
