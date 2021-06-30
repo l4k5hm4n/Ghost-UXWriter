@@ -289,7 +289,7 @@ section.hero .hero__image.active:after {
   position: absolute;
   width: 80%;
   height: 100%;
-  max-width: 540px;
+  max-width: 60%;
   margin: 0 auto;
   top: 0;
   left: 18%;
@@ -970,6 +970,13 @@ section.hero .hero__image.active:after {
     right: 5% !important;
     min-height: 120px !important;
   }
+  section.hero .hero__image.active:after {
+    width: 80%;
+    height: 100%;
+    max-width: 60%;
+    left: 10%;
+    right: 10%;
+  }
 }
 
 @media (max-width: 420px) {
@@ -1057,6 +1064,17 @@ section.hero .hero__image.active:after {
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 1380px) {
+  section.hero .hero__image.active:after {
+    width: 80%;
+    height: 100%;
+    max-width: 80%;
+    left: 10%;
+    right: 10%;
   }
 }
 /*# sourceMappingURL=main.css.map */
