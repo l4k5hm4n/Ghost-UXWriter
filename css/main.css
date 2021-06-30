@@ -1026,10 +1026,10 @@ section.hero .hero__image.active:after {
   .plugin__features .features__container.voice__tones img {
     width: 100%;
     padding: 0;
-    height: 225px;
+    height: 235px;
   }
   .features__container.favourites {
-    padding-top: 100px;
+    padding-top: 68px;
   }
   img.voice__tones {
     -webkit-transform: scale(0.8);
@@ -1039,7 +1039,7 @@ section.hero .hero__image.active:after {
   .features__container.favourites img {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
-    margin-top: -100px;
+    margin-top: -40px;
     margin-bottom: 60px;
   }
   .features__container.UX__copies .features__container--right {
