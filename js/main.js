@@ -34,11 +34,6 @@ if(window.innerWidth > 768) {
     scrollEventListener();
 }
 
-// document.querySelector('body').onload = () => {
-//     document.querySelector('.preloader').remove();
-//     document.querySelector('body').classList.add('loaded');
-// }
-
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.preloader').remove();
     document.querySelector('body').classList.add('loaded');

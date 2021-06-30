@@ -968,6 +968,12 @@ section.hero {
     .footer .footer__container .plugin__download--btn {
         margin: 0 0 20px 0;
     }
+
+    .features__container.voice__tones .features__container--left:before, .features__container.voice__tones .features__container--left:after {
+        height: 200px !important;
+        bottom: 0;
+        top: auto !important;
+    }
 }
 
 @media (max-width: 1380px) {
