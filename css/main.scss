@@ -379,6 +379,10 @@ section.hero {
             display: block;
             border-bottom-right-radius: 8px;
             border-bottom-left-radius: 8px;
+
+            &::-webkit-media-controls {
+                display: none;
+              }
         }
     }
 }

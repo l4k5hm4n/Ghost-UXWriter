@@ -452,6 +452,10 @@ section.hero .hero__image.active:after {
   border-bottom-left-radius: 8px;
 }
 
+.plugin__tryout .plugin__tryout--right video::-webkit-media-controls {
+  display: none;
+}
+
 .plugin__features {
   padding-inline: 14%;
   margin-top: 200px;
