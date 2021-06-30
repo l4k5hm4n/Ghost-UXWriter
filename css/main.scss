@@ -883,7 +883,7 @@ section.hero {
         img {
             height: 260px !important;
             width: auto !important;
-            padding: 12% !important;
+            padding: 12% 0 !important;
         }
     }
 
@@ -968,7 +968,6 @@ section.hero {
     .footer .footer__container .plugin__download--btn {
         margin: 0 0 20px 0;
     }
-            
 }
 
 @media (max-width: 1380px) {
