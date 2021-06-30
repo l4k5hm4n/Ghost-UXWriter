@@ -868,7 +868,7 @@ section.hero {
     }
 
     section.hero {
-        padding-bottom: 0;
+        padding-bottom: 20px;
 
         .hero__image video {
             height: 200px !important;
@@ -881,13 +881,17 @@ section.hero {
         margin-top: 200px !important
     }
 
+    .plugin__tryout {
+        margin-top: 90px;
+    }
+
     .UX__copies {
         position: relative;
 
         img {
             height: 260px !important;
             width: auto !important;
-            padding: 12% 0 !important;
+            padding: 16% 0 !important;
         }
     }
 
@@ -896,7 +900,7 @@ section.hero {
     }
 
     .plugin__features .features__container {
-        padding-bottom: 0;
+        padding-bottom: 20px;
     }
 
     .plugin__features .features__container .features__container--left {
@@ -907,7 +911,7 @@ section.hero {
     .plugin__features .features__container.voice__tones img {
         width: 100%;
         padding: 0;
-        height: 235px;
+        height: 265px;
     }
 
     .features__container.favourites {
@@ -916,11 +920,11 @@ section.hero {
 
     img.voice__tones {
         transform: scale(0.8);
-        margin-top: 100px;
+        margin-top: 85px;
     }
 
     .features__container.favourites img {
-        transform: scale(0.6);
+        transform: scale(0.7);
         margin-top: -40px;
         margin-bottom: 60px;
     }
@@ -966,7 +970,7 @@ section.hero {
     }
 
     .footer .footer__plugin {
-        width: 50%;
+        width: 60%;
     }
 
     .footer .footer__container .plugin__download--btn {

@@ -999,7 +999,7 @@ section.hero .hero__image.active:after {
     margin-bottom: -100px;
   }
   section.hero {
-    padding-bottom: 0;
+    padding-bottom: 20px;
   }
   section.hero .hero__image video {
     height: 200px !important;
@@ -1008,20 +1008,23 @@ section.hero .hero__image.active:after {
   #shadow__block {
     margin-top: 200px !important;
   }
+  .plugin__tryout {
+    margin-top: 90px;
+  }
   .UX__copies {
     position: relative;
   }
   .UX__copies img {
     height: 260px !important;
     width: auto !important;
-    padding: 12% 0 !important;
+    padding: 16% 0 !important;
   }
   .random__categories {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
   }
   .plugin__features .features__container {
-    padding-bottom: 0;
+    padding-bottom: 20px;
   }
   .plugin__features .features__container .features__container--left {
     margin-top: -100px;
@@ -1030,7 +1033,7 @@ section.hero .hero__image.active:after {
   .plugin__features .features__container.voice__tones img {
     width: 100%;
     padding: 0;
-    height: 235px;
+    height: 265px;
   }
   .features__container.favourites {
     padding-top: 68px;
@@ -1038,11 +1041,11 @@ section.hero .hero__image.active:after {
   img.voice__tones {
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
-    margin-top: 100px;
+    margin-top: 85px;
   }
   .features__container.favourites img {
-    -webkit-transform: scale(0.6);
-            transform: scale(0.6);
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
     margin-top: -40px;
     margin-bottom: 60px;
   }
@@ -1077,7 +1080,7 @@ section.hero .hero__image.active:after {
     padding: 0 8% !important;
   }
   .footer .footer__plugin {
-    width: 50%;
+    width: 60%;
   }
   .footer .footer__container .plugin__download--btn {
     margin: 0 0 20px 0;
