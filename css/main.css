@@ -983,10 +983,13 @@ section.hero .hero__image.active:after {
   h2, h4, section.hero h2 span {
     font-size: 28px !important;
   }
+  p {
+    font-size: 18px !important;
+  }
   section.hero .hero__subheading {
     margin-top: 6%;
-    padding: 0 6%;
-    font-size: 18px;
+    padding: 0;
+    font-size: 18px !important;
   }
   .hero__image {
     margin-bottom: -100px;
@@ -1023,7 +1026,7 @@ section.hero .hero__image.active:after {
   .plugin__features .features__container.voice__tones img {
     width: 100%;
     padding: 0;
-    height: 250px;
+    height: 225px;
   }
   .features__container.favourites {
     padding-top: 100px;
@@ -1065,6 +1068,15 @@ section.hero .hero__image.active:after {
     right: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
+  }
+  .footer__container h4 {
+    padding: 0 8% !important;
+  }
+  .footer .footer__plugin {
+    width: 50%;
+  }
+  .footer .footer__container .plugin__download--btn {
+    margin: 0 0 20px 0;
   }
 }
 
