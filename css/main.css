@@ -1005,9 +1005,9 @@ section.hero .hero__image.active:after {
     position: relative;
   }
   .UX__copies img {
-    height: 260px;
-    width: auto;
-    padding: 12%;
+    height: 260px !important;
+    width: auto !important;
+    padding: 12% !important;
   }
   .random__categories {
     -webkit-transform: scale(0.6);
